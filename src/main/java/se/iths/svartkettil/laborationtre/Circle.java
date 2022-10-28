@@ -12,9 +12,9 @@ public class Circle extends Shape{
     }
 
     @Override
-    public void drawShape(Position position, GraphicsContext daVinci, Spinner<Integer> size, Color color) {
-        daVinci.setFill(color);
-        daVinci.fillOval(position.x(), position.y(),getSize(size), getSize(size));
+    public void drawShape(GraphicsContext daVinci) {
+        daVinci.setFill(getColor());
+        daVinci.fillOval(getPosition().getX(), getPosition().getY(),getSize(), getSize());
     }
 
 

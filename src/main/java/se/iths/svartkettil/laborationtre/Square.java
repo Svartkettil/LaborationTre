@@ -12,8 +12,8 @@ public class Square extends Shape{
     }
 
     @Override
-    public void drawShape(Position position, GraphicsContext daVinci, Spinner<Integer> size, Color color) {
-        daVinci.setFill(color);
-        daVinci.fillRect(position.x(), position.y(),getSize(size), getSize(size));
+    public void drawShape(GraphicsContext daVinci) {
+        daVinci.setFill(getColor());
+        daVinci.fillRect(getPosition().getX(), getPosition().getY(),getSize(), getSize());
     }
 }

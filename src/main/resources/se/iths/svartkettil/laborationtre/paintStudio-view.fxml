@@ -35,8 +35,8 @@
       </GridPane>
       <HBox layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="578.0" spacing="5.0">
          <children>
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button fx:id="regretButton" mnemonicParsing="false" onAction="#goBack" text="Regret" />
+            <Button mnemonicParsing="false" text="Insist" />
             <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" text="Button" />

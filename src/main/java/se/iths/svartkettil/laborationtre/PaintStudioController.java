@@ -9,7 +9,6 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Spinner;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 
 
 public class PaintStudioController {
@@ -18,51 +17,67 @@ public class PaintStudioController {
     PaintModel model = new PaintModel();
     public Button circleChoiceButton;
     public Button squareChoiceButton;
-    public ShapeFactory shapeFactory;
+    public Button regretButton;
+    public ShapeFactory shapeFactory = new ShapeFactory();
+    public Position position;
+    public int test;
 
 
     @FXML
     Canvas paintStudioCanvas = new Canvas();
 
     public GraphicsContext daVinci;
-    String selectedShape;
-
-
 
     public void initialize(){
         daVinci = paintStudioCanvas.getGraphicsContext2D();
     }
 
     public void canvasClicked(MouseEvent mouseEvent) {
-        printSelectedShape(mouseEvent);
+        final int size = sizeSetter.getValue();
+        final int halfSize = size / 2;
+        position = new Position(mouseEvent.getX() - halfSize, mouseEvent.getY() - halfSize);
+        model.listOfShapes.add(shapeFactory.getNewShape(model, position, pickColor(), size));
+        printListOfShapes();
+
     }
 
-    private void printSelectedShape(MouseEvent mouseEvent) {
-        if (selectedShape.equals("circle"))
-        printCircleOnCanvas(mouseEvent);
-        else if (selectedShape.equals("square"))
-        printSquareOnCanvas(mouseEvent);
-    }
+
 
     public Color pickColor() {
         return colorPicker.getValue();
    }
 
     public void printCircleOnCanvas(MouseEvent mouseEvent) {
+        int i = model.listOfShapes.size();
         Position position = new Position(mouseEvent.getX(), mouseEvent.getY());
-        Circle circle = new Circle(position, pickColor(), sizeSetter.getValue());
-        circle.drawShape(position, daVinci, sizeSetter, pickColor());
+        model.listOfShapes.add(new Circle(position, pickColor(), sizeSetter.getValue()));
+        model.listOfShapes.get(i).drawShape(daVinci);
+
     }
     public void printSquareOnCanvas(MouseEvent mouseEvent){
-        Position position = new Position(mouseEvent.getX(), mouseEvent.getY());
-        Square square = new Square(position, pickColor(), sizeSetter.getValue());
-        square.drawShape(position, daVinci, sizeSetter, pickColor());
+        int i = model.listOfShapes.size();
+        position = new Position(mouseEvent.getX(), mouseEvent.getY());
+        model.listOfShapes.add(new Square(position, pickColor(), sizeSetter.getValue()));
+        model.listOfShapes.get(i).drawShape(daVinci);
     }
     public void circleChoiceClicked(ActionEvent actionEvent){
-        selectedShape = "circle";
+        model.setSquareSelected(false);
+        model.setCircleSelected(true);
     }
     public void squareChoiceClicked(ActionEvent actionEvent){
-        selectedShape = "square";
+        model.setSquareSelected(true);
+        model.setCircleSelected(false);
+    }
+    public void goBack(ActionEvent actionEvent){
+        model.listOfShapes.remove(model.listOfShapes.size()-1);
+        daVinci.clearRect(0.0,0.0, paintStudioCanvas.getWidth(), paintStudioCanvas.getHeight());
+        printListOfShapes();
+    }
+    public void printListOfShapes(){
+        daVinci.clearRect(0.0,0.0, paintStudioCanvas.getWidth(), paintStudioCanvas.getHeight());
+        model.listOfShapes.forEach(shape -> shape.drawShape(daVinci));
+        
     }
 
 }
+

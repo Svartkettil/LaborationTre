@@ -35,7 +35,7 @@ public abstract class Shape {
         this.color = color;
     }
 
-    public int getSize(Spinner<Integer> spinnerValue) {
+    public int getSize() {
         return size;
     }
 
@@ -43,7 +43,7 @@ public abstract class Shape {
         this.size = size;
     }
 
-    abstract public void drawShape(Position position, GraphicsContext daVinci, Spinner<Integer> size, Color color);
+    abstract public void drawShape(GraphicsContext daVinci);
 
     @Override
     public String toString() {
