@@ -3,6 +3,7 @@ package se.iths.svartkettil.laborationtre;
 import javafx.scene.paint.Color;
 
 public class ShapeFactory {
+    //Ändra metod till switch
 
     Shape getNewShape(PaintModel model, Position position, Color color, Integer size) {
         if (model.isCircleSelected())
@@ -11,4 +12,5 @@ public class ShapeFactory {
             return new Square(position, color, size);
         return null;
     }
+
 }
