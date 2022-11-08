@@ -1,7 +1,7 @@
 package se.iths.svartkettil.laborationtre;
-
+import javafx.geometry.Pos;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Spinner;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 public class Circle extends Shape{
@@ -16,6 +16,14 @@ public class Circle extends Shape{
         daVinci.setFill(getColor());
         daVinci.fillOval(getPosition().getX(), getPosition().getY(),getSize(), getSize());
     }
+
+    public boolean isInsideClickPosition(MouseEvent mouseEvent) {
+        double distX = mouseEvent.getX() - getPosition().getX();
+        double distY = mouseEvent.getY() - getPosition().getY();
+        double distance = Math.sqrt((distX * distX) + (distY * distY));
+        return distance <= getSize();
+    }
+
 
 
 }

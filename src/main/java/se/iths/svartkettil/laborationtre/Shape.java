@@ -1,8 +1,10 @@
 package se.iths.svartkettil.laborationtre;
 
 import javafx.css.Size;
+import javafx.geometry.Pos;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Spinner;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 public abstract class Shape {
@@ -53,6 +55,12 @@ public abstract class Shape {
                 ", size=" + size +
                 '}';
     }
+
+    abstract public boolean isInsideClickPosition(MouseEvent mouseEvent);
+
+    public void updateShape(Color color, int size) {
+        this.size = size;
+        this.color = color;
+    }
+
 }
-
-

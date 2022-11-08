@@ -7,20 +7,16 @@ import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 public class PaintModel {
     List<Shape> listOfShapes = new ArrayList<>();
-    //Position här?
-    private final BooleanProperty circleSelected;
-    private final BooleanProperty squareSelected;
+    ShapeType shapeType;
     private Property<Integer> sizeProperty;
     private Property<Color> colorProperty;
 
 
     public PaintModel() {
-        circleSelected = new SimpleBooleanProperty();
-        squareSelected = new SimpleBooleanProperty();
         colorProperty = new SimpleObjectProperty<>();
     }
 
@@ -40,27 +36,10 @@ public class PaintModel {
         this.sizeProperty = sizeProperty;
     }
 
-    public boolean isCircleSelected() {
-        return circleSelected.get();
+    public ShapeType getShapeType() {
+        return shapeType;
     }
-
-    public BooleanProperty circleSelectedProperty() {
-        return circleSelected;
-    }
-
-    public void setCircleSelected(boolean circleSelected) {
-        this.circleSelected.set(circleSelected);
-    }
-
-    public boolean isSquareSelected() {
-        return squareSelected.get();
-    }
-
-    public BooleanProperty squareSelectedProperty() {
-        return squareSelected;
-    }
-
-    public void setSquareSelected(boolean squareSelected) {
-        this.squareSelected.set(squareSelected);
+    public void setShapeType(ShapeType shapeType) {
+        this.shapeType = shapeType;
     }
 }

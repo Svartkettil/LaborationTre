@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -35,11 +36,9 @@
       </GridPane>
       <HBox layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="578.0" spacing="5.0">
          <children>
-            <Button fx:id="regretButton" mnemonicParsing="false" onAction="#goBack" text="Regret" />
-            <Button mnemonicParsing="false" text="Insist" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button fx:id="regretButton" mnemonicParsing="false" onAction="#regret" text="Regret" />
+            <Button fx:id="insistButton" mnemonicParsing="false" text="Insist" />
+            <ToggleButton fx:id="selectButton" mnemonicParsing="false" text="Select" />
          </children>
          <padding>
             <Insets top="5.0" />

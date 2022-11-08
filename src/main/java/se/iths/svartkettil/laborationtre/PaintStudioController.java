@@ -2,13 +2,15 @@ package se.iths.svartkettil.laborationtre;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.Spinner;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+
+import static se.iths.svartkettil.laborationtre.ShapeType.CIRCLE;
+import static se.iths.svartkettil.laborationtre.ShapeType.SQUARE;
 
 
 public class PaintStudioController {
@@ -20,6 +22,7 @@ public class PaintStudioController {
     public Button regretButton;
     public ShapeFactory shapeFactory = new ShapeFactory();
     public Position position;
+    public CheckBox selectMode;
 
 
     @FXML
@@ -29,27 +32,27 @@ public class PaintStudioController {
 
     public void initialize(){
         daVinci = paintStudioCanvas.getGraphicsContext2D();
-        model.setCircleSelected(true);
         model.setSizeProperty(sizeSetter.getValueFactory().valueProperty());
         model.setColorProperty(colorPicker.valueProperty());
     }
 
     public void canvasClicked(MouseEvent mouseEvent) {
-        final int halfSize = model.getSize() / 2;
-        position = new Position(mouseEvent.getX() - halfSize, mouseEvent.getY() - halfSize);
-        model.listOfShapes.add(shapeFactory.getNewShape(model, position, model.getColor(), model.getSize()));
-        printListOfShapes();
+        if(selectMode.isSelected()) updateSelectedShape(mouseEvent);
+        else {
+            final int halfSize = model.getSize() / 2;
+            position = new Position(mouseEvent.getX() - halfSize, mouseEvent.getY() - halfSize);
+            model.listOfShapes.add(shapeFactory.getNewShape(position, model.getColor(), model.getSize(), model.getShapeType()));
+            printListOfShapes();
+        }
 
     }
-    public void circleChoiceClicked(ActionEvent actionEvent){
-        model.setSquareSelected(false);
-        model.setCircleSelected(true);
+    public void circleChoiceClicked(){
+        model.setShapeType(CIRCLE);
     }
-    public void squareChoiceClicked(ActionEvent actionEvent){
-        model.setSquareSelected(true);
-        model.setCircleSelected(false);
+    public void squareChoiceClicked(){
+        model.setShapeType(SQUARE);
     }
-    public void goBack(ActionEvent actionEvent){
+    public void regret(){
         model.listOfShapes.remove(model.listOfShapes.size()-1);
         daVinci.clearRect(0.0,0.0, paintStudioCanvas.getWidth(), paintStudioCanvas.getHeight());
         printListOfShapes();
@@ -57,8 +60,14 @@ public class PaintStudioController {
     public void printListOfShapes(){
         daVinci.clearRect(0.0,0.0, paintStudioCanvas.getWidth(), paintStudioCanvas.getHeight());
         model.listOfShapes.forEach(shape -> shape.drawShape(daVinci));
-        
     }
+    public void updateSelectedShape(MouseEvent mouseEvent){
+        model.listOfShapes.stream()
+                .filter(shape -> shape.isInsideClickPosition(mouseEvent))
+                .reduce((first, second) -> second)
+                .ifPresent(shape -> shape.updateShape(model.getColor(), model.getSize()));
+    }
+
 
 }
 
