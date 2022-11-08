@@ -10,7 +10,7 @@ public class Circle extends Shape{
     }
     public Circle(){
     }
-
+    public double radius = getSize()/2;
     @Override
     public void drawShape(GraphicsContext daVinci) {
         daVinci.setFill(getColor());
@@ -18,10 +18,10 @@ public class Circle extends Shape{
     }
 
     public boolean isInsideClickPosition(MouseEvent mouseEvent) {
-        double distX = mouseEvent.getX() - getPosition().getX();
-        double distY = mouseEvent.getY() - getPosition().getY();
-        double distance = Math.sqrt((distX * distX) + (distY * distY));
-        return distance <= getSize();
+        double distX = mouseEvent.getX() - (getPosition().getX() + radius);
+        double distY = mouseEvent.getY() - (getPosition().getY() + radius);
+        double distance = (distX * distX) + (distY * distY);
+        return distance <= Math.pow(radius, 2);
     }
 
 

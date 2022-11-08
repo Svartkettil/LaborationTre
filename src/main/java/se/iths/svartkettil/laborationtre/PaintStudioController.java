@@ -1,13 +1,10 @@
 package se.iths.svartkettil.laborationtre;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 
 import static se.iths.svartkettil.laborationtre.ShapeType.CIRCLE;
 import static se.iths.svartkettil.laborationtre.ShapeType.SQUARE;
@@ -16,13 +13,13 @@ import static se.iths.svartkettil.laborationtre.ShapeType.SQUARE;
 public class PaintStudioController {
     public Spinner<Integer> sizeSetter;
     public ColorPicker colorPicker;
-    PaintModel model = new PaintModel();
-    public Button circleChoiceButton;
-    public Button squareChoiceButton;
+    public ToggleButton selectButton;
+    PaintModel model = new PaintModel(circleToggle);
+    public ToggleButton circleChoiceButton;
+    public ToggleButton squareChoiceButton;
     public Button regretButton;
     public ShapeFactory shapeFactory = new ShapeFactory();
     public Position position;
-    public CheckBox selectMode;
 
 
     @FXML
@@ -32,18 +29,19 @@ public class PaintStudioController {
 
     public void initialize(){
         daVinci = paintStudioCanvas.getGraphicsContext2D();
-        model.setSizeProperty(sizeSetter.getValueFactory().valueProperty());
-        model.setColorProperty(colorPicker.valueProperty());
+        sizeSetter.getValueFactory().valueProperty().bindBidirectional(model.sizeProperty());
+        colorPicker.valueProperty().bindBidirectional(model.colorProperty());
     }
 
     public void canvasClicked(MouseEvent mouseEvent) {
-        if(selectMode.isSelected()) updateSelectedShape(mouseEvent);
+        if(selectButton.isSelected())
+            updateSelectedShape(mouseEvent);
         else {
             final int halfSize = model.getSize() / 2;
             position = new Position(mouseEvent.getX() - halfSize, mouseEvent.getY() - halfSize);
             model.listOfShapes.add(shapeFactory.getNewShape(position, model.getColor(), model.getSize(), model.getShapeType()));
-            printListOfShapes();
         }
+        printListOfShapes();
 
     }
     public void circleChoiceClicked(){
