@@ -14,7 +14,8 @@ public class PaintStudioController {
     public Spinner<Integer> sizeSetter;
     public ColorPicker colorPicker;
     public ToggleButton selectButton;
-    PaintModel model = new PaintModel(circleToggle);
+    public ToggleGroup shapeToggle;
+    PaintModel model = new PaintModel();
     public ToggleButton circleChoiceButton;
     public ToggleButton squareChoiceButton;
     public Button regretButton;

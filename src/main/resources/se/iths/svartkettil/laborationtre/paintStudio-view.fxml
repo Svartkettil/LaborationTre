@@ -28,13 +28,13 @@
         </rowConstraints>
          <children>
             <ColorPicker fx:id="colorPicker" prefHeight="26.0" prefWidth="51.0" GridPane.columnIndex="1" />
-            <ToggleButton fx:id="circleChoiceButton" mnemonicParsing="false" onAction="#circleChoiceClicked" text="Crickle" GridPane.rowIndex="1" >
-             <toggleGroup>
-                 <ToggleGroup fx:id="shapeToggle"/>
-             </toggleGroup>
-            </ToggleButton>
-            <Button mnemonicParsing="false" text="Triangle" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ToggleButton fx:id="squareChoiceButton" toggleGroup="shapeToggle" mnemonicParsing="false" onAction="#squareChoiceClicked" text="Square" GridPane.rowIndex="2" />
+             <ToggleButton fx:id="circleChoiceButton" mnemonicParsing="false" onAction="#circleChoiceClicked" text="Crickle" GridPane.rowIndex="1" >
+                 <toggleGroup>
+                     <ToggleGroup fx:id="shapeToggle"/>
+                 </toggleGroup>
+             </ToggleButton>
+             <ToggleButton fx:id="squareChoiceButton" toggleGroup="$shapeToggle" mnemonicParsing="false" onAction="#squareChoiceClicked" text="Square" GridPane.rowIndex="2" />
+             <Button mnemonicParsing="false" text="Triangle" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" text="Pencil" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Spinner fx:id="sizeSetter" amountToStepBy="1" editable="true" initialValue="10" max="499" min="1" />
          </children>
@@ -43,7 +43,7 @@
          <children>
             <Button fx:id="regretButton" mnemonicParsing="false" onAction="#regret" text="Regret" />
             <Button fx:id="insistButton" mnemonicParsing="false" text="Insist" />
-            <ToggleButton fx:id="selectButton" selected="false" toggleGroup="shapeToggle" mnemonicParsing="false" text="Select" />
+            <ToggleButton fx:id="selectButton" toggleGroup="$shapeToggle" mnemonicParsing="false" text="Select" />
          </children>
          <padding>
             <Insets top="5.0" />

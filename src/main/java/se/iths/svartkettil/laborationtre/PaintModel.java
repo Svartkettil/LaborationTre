@@ -1,16 +1,23 @@
 package se.iths.svartkettil.laborationtre;
 
+import javafx.beans.Observable;
 import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 import static javafx.scene.paint.Color.BLACK;
 
 
 public class PaintModel {
-    List<Shape> listOfShapes = new ArrayList<>();
+    ObservableList<Shape> listOfShapes;
+    Deque<Deque<Shape>> listOfRegrets;
+    Deque<Deque<Shape>> listOfInsists;
     ShapeType shapeType;
     private final ObjectProperty<Integer> size;
     private final ObjectProperty<Color> color;
@@ -30,14 +37,9 @@ public class PaintModel {
         this.selectToggle = new SimpleBooleanProperty(false);
         this.size = new SimpleObjectProperty<>(20);
         this.color = new SimpleObjectProperty<>(BLACK);
-    }
-
-    public List<Shape> getListOfShapes() {
-        return listOfShapes;
-    }
-
-    public void setListOfShapes(List<Shape> listOfShapes) {
-        this.listOfShapes = listOfShapes;
+        this.listOfShapes = FXCollections.observableArrayList();
+        this.listOfRegrets = new ArrayDeque<>();
+        this.listOfInsists = new ArrayDeque<>();
     }
 
     public Integer getSize() {

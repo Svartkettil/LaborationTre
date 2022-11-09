@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd48b738-e0ab-4562-a921-b82517454e93" name="Changes" comment="Add selectmode">
+    <list default="true" id="cd48b738-e0ab-4562-a921-b82517454e93" name="Changes" comment="Add toggle Buttons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/Circle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintStudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintStudioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/ShapeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/ShapeFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/se/iths/svartkettil/laborationtre/paintStudio-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/se/iths/svartkettil/laborationtre/paintStudio-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,11 +106,28 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1667930903562</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Add toggle Buttons">
+      <created>1667933850792</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1667933850792</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -149,6 +164,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="add regret function" />
     <MESSAGE value="Add selectmode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add selectmode" />
+    <MESSAGE value="Add toggle Buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add toggle Buttons" />
   </component>
 </project>
