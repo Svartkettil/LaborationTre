@@ -24,6 +24,13 @@ public class Circle extends Shape{
         return distance <= Math.pow(radius, 2);
     }
 
+    @Override
+    public Shape copyOf(Shape shape) {
+        return new Circle(
+                shape.getPosition(),
+                shape.getColor(),
+                shape.getSize());
+    }
 
 
 }

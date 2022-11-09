@@ -25,4 +25,11 @@ public class Square extends Shape{
                 mouseEvent.getY() >= getPosition().getY() &&
                 mouseEvent.getY() <= getPosition().getY() + getSize();
     }
+    @Override
+    public Shape copyOf(Shape shape) {
+        return new Square(
+                shape.getPosition(),
+                shape.getColor(),
+                shape.getSize());
+    }
 }

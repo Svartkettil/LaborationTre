@@ -63,4 +63,7 @@ public abstract class Shape {
         this.color = color;
     }
 
+    abstract public Shape copyOf(Shape shape);
+
+
 }
