@@ -15,15 +15,15 @@ public class Square extends Shape{
     @Override
     public void drawShape(GraphicsContext daVinci) {
         daVinci.setFill(getColor());
-        daVinci.fillRect(getPosition().getX(), getPosition().getY(),getSize(), getSize());
+        daVinci.fillRect(getPosition().getX() - getSize()/2, getPosition().getY() - getSize()/2, getSize(), getSize());
     }
 
     @Override
     public boolean isInsideClickPosition(MouseEvent mouseEvent) {
-        return mouseEvent.getX() >= getPosition().getX() &&
-                mouseEvent.getX() <= getPosition().getX() + getSize() &&
-                mouseEvent.getY() >= getPosition().getY() &&
-                mouseEvent.getY() <= getPosition().getY() + getSize();
+        return mouseEvent.getX() >= getPosition().getX() - getSize()/2 &&
+                mouseEvent.getX() <= getPosition().getX() + getSize()/2 &&
+                mouseEvent.getY() >= getPosition().getY() - getSize()/2 &&
+                mouseEvent.getY() <= getPosition().getY() + getSize()/2;
     }
     @Override
     public Shape copyOf(Shape shape) {
@@ -32,4 +32,14 @@ public class Square extends Shape{
                 shape.getColor(),
                 shape.getSize());
     }
+
+    @Override
+    public String toString() {
+        return "<rect x=\"" + (getPosition().getX() - getSize()/2) + "\" " +
+                "y=\"" + (getPosition().getY() - getSize()/2) + "\" " +
+                "width=\"" + getSize() + "\" " +
+                "height=\"" + getSize() + "\" " +
+                "fill=\"#" + getColorAsString() + "\" />";
+    }
+
 }

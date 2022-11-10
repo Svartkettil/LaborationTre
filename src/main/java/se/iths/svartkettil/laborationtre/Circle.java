@@ -14,12 +14,12 @@ public class Circle extends Shape{
     @Override
     public void drawShape(GraphicsContext daVinci) {
         daVinci.setFill(getColor());
-        daVinci.fillOval(getPosition().getX(), getPosition().getY(),getSize(), getSize());
+        daVinci.fillOval(getPosition().getX() - radius, getPosition().getY() - radius, getSize(), getSize());
     }
 
     public boolean isInsideClickPosition(MouseEvent mouseEvent) {
-        double distX = mouseEvent.getX() - (getPosition().getX() + radius);
-        double distY = mouseEvent.getY() - (getPosition().getY() + radius);
+        double distX = mouseEvent.getX() - (getPosition().getX());
+        double distY = mouseEvent.getY() - (getPosition().getY());
         double distance = (distX * distX) + (distY * distY);
         return distance <= Math.pow(radius, 2);
     }
@@ -30,6 +30,14 @@ public class Circle extends Shape{
                 shape.getPosition(),
                 shape.getColor(),
                 shape.getSize());
+    }
+
+    @Override
+    public String toString() {
+        return "<circle cx=\"" + getPosition().getX() + "\" " +
+                "cy=\"" + getPosition().getY() + "\" " +
+                "r=\"" + radius + "\" " +
+                "fill=\"#" + getColorAsString() + "\" />";
     }
 
 

@@ -5,6 +5,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
 import static se.iths.svartkettil.laborationtre.ShapeType.CIRCLE;
 import static se.iths.svartkettil.laborationtre.ShapeType.SQUARE;
 
@@ -14,6 +16,7 @@ public class PaintStudioController {
     public ColorPicker colorPicker;
     public ToggleButton selectButton;
     public ToggleGroup shapeToggle;
+    public Button saveButton;
     PaintModel model = new PaintModel();
     public ToggleButton circleChoiceButton;
     public ToggleButton squareChoiceButton;
@@ -21,32 +24,43 @@ public class PaintStudioController {
     public Button insistButton;
     public ShapeFactory shapeFactory = new ShapeFactory();
     public Position position;
+    SvgFileWriter writer = new SvgFileWriter();
 
 
     @FXML
     Canvas paintStudioCanvas = new Canvas();
 
     public GraphicsContext daVinci;
+    private Stage stage;
 
     public void initialize(){
         daVinci = paintStudioCanvas.getGraphicsContext2D();
         sizeSetter.getValueFactory().valueProperty().bindBidirectional(model.sizeProperty());
         colorPicker.valueProperty().bindBidirectional(model.colorProperty());
+        circleChoiceButton.selectedProperty().bindBidirectional(model.circleToggleProperty());
+        squareChoiceButton.selectedProperty().bindBidirectional(model.squareToggleProperty());
+        selectButton.selectedProperty().bindBidirectional(model.selectToggleProperty());
     }
 
     public void canvasClicked(MouseEvent mouseEvent) {
         model.getListOfRegrets().add(model.getTempList());
-        if(selectButton.isSelected())
+        if(selectButton.isSelected()) {
             updateSelectedShape(mouseEvent);
+            model.updateListOfShapes();
+        }
         else {
-            final int halfSize = model.getSize() / 2;
-            position = new Position(mouseEvent.getX() - halfSize, mouseEvent.getY() - halfSize);
+            position = new Position(mouseEvent.getX(), mouseEvent.getY());
             model.getListOfShapes().add(shapeFactory.getNewShape(position, model.getColor(), model.getSize(), model.getShapeType()));
         }
-        printListOfShapes();
-        model.getListOfInsists().clear();
+        prepareAndDraw();
 
     }
+
+    public void prepareAndDraw() {
+        model.getListOfInsists().clear();
+        printListOfShapes();
+    }
+
     public void circleChoiceClicked(){
         model.setShapeType(CIRCLE);
     }
@@ -74,6 +88,12 @@ public class PaintStudioController {
     }
 
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+    public void save(){
+        writer.saveToFile(model, stage);
 
+    }
 }
 

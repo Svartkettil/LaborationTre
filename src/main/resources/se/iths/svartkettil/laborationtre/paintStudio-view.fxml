@@ -33,9 +33,7 @@
                      <ToggleGroup fx:id="shapeToggle" />
                  </toggleGroup>
              </ToggleButton>
-             <ToggleButton fx:id="squareChoiceButton" mnemonicParsing="false" onAction="#squareChoiceClicked" text="Square" toggleGroup="$shapeToggle" GridPane.rowIndex="2" />
-             <Button mnemonicParsing="false" text="Triangle" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Pencil" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+             <ToggleButton fx:id="squareChoiceButton" mnemonicParsing="false" onAction="#squareChoiceClicked" text="Square" toggleGroup="$shapeToggle" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Spinner fx:id="sizeSetter" amountToStepBy="1" editable="true" initialValue="10" max="499" min="1" />
          </children>
       </GridPane>
@@ -44,6 +42,7 @@
             <Button fx:id="regretButton" mnemonicParsing="false" onAction="#regret" text="Regret" />
             <Button fx:id="insistButton" mnemonicParsing="false" onAction="#insist" text="Insist" />
             <ToggleButton fx:id="selectButton" mnemonicParsing="false" text="Select" toggleGroup="$shapeToggle" />
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#save" text="Save" />
          </children>
          <padding>
             <Insets top="5.0" />

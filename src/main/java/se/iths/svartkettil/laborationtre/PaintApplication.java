@@ -12,6 +12,8 @@ public class PaintApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PaintApplication.class.getResource("paintStudio-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 0, 0);
+        PaintStudioController controller = fxmlLoader.getController();
+        controller.setStage(stage);
         stage.setMaximized(true);
         stage.setTitle("Hello!");
         stage.setScene(scene);

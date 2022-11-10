@@ -1,9 +1,6 @@
 package se.iths.svartkettil.laborationtre;
 
-import javafx.css.Size;
-import javafx.geometry.Pos;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Spinner;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
@@ -12,10 +9,14 @@ public abstract class Shape {
     private Color color;
     private int size;
 
+    public String getColorAsString() {
+        return getColor().toString().substring(2, 10);
+    }
+
     public Shape(Position position, Color color, int size) {
-        this.position = position;
         this.color = color;
         this.size = size;
+        this.position = position;
     }
 
     public Shape() {
@@ -47,23 +48,15 @@ public abstract class Shape {
 
     abstract public void drawShape(GraphicsContext daVinci);
 
-    @Override
-    public String toString() {
-        return "Shape{" +
-                "position=" + position +
-                ", color=" + color +
-                ", size=" + size +
-                '}';
-    }
-
     abstract public boolean isInsideClickPosition(MouseEvent mouseEvent);
 
     public void updateShape(Color color, int size) {
-        this.size = size;
-        this.color = color;
+        setSize(size);
+        setColor(color);
     }
 
     abstract public Shape copyOf(Shape shape);
 
 
+    abstract public String toString();
 }
