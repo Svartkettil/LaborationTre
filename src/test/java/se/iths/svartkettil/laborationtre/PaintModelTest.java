@@ -25,7 +25,7 @@ class PaintModelTest {
         controller.model.getListOfShapes().add(square2);
     }
     @Test
-    void sizeListOfInsistsEqualsToRegretUsesSubtractedWithUsesOfInsist(){
+    void sizeOfListOfInsistsEqualsToRegretUsesSubNumOfUsesOfInsist(){
         addFiveShapesToList();
         controller.model.regret();
         controller.model.regret();
@@ -34,7 +34,7 @@ class PaintModelTest {
         controller.model.insist();
 
         int actual = controller.model.getListOfInsists().size();
-        assertEquals(1, actual, "listOfInsists should be empty");
+        assertEquals(1, actual, "listOfInsists should be of size 1");
     }
     @Test
     void modelReturnsShapeTypeSquareWhenSquareIsChosenShape(){

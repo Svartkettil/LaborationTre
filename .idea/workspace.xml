@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd48b738-e0ab-4562-a921-b82517454e93" name="Changes" comment="Add insist and regret">
-      <change afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/SvgFileWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/se/iths/svartkettil/laborationtre/PaintModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintStudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/PaintStudioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/ShapeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/ShapeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/se/iths/svartkettil/laborationtre/paintStudio-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/se/iths/svartkettil/laborationtre/paintStudio-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/SvgFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/iths/svartkettil/laborationtre/SvgFileWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/se/iths/svartkettil/laborationtre/PaintModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/se/iths/svartkettil/laborationtre/PaintModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,21 +34,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/mauri/AppData/Local/SceneBuilder/SceneBuilder.exe",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editing.templates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mauri/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -82,7 +74,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaintModelTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PaintModelTest.modelReturnsShapeTypeSquareWhenSquareIsChosenShape" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LaborationTre" />
       <extension name="coverage">
         <pattern>
@@ -92,7 +84,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="se.iths.svartkettil.laborationtre" />
       <option name="MAIN_CLASS_NAME" value="se.iths.svartkettil.laborationtre.PaintModelTest" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="METHOD_NAME" value="modelReturnsShapeTypeSquareWhenSquareIsChosenShape" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaintModelTest.sizeOfListOfInsistsEqualsToRegretUsesSubNumOfUsesOfInsist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LaborationTre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se.iths.svartkettil.laborationtre.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se.iths.svartkettil.laborationtre" />
+      <option name="MAIN_CLASS_NAME" value="se.iths.svartkettil.laborationtre.PaintModelTest" />
+      <option name="METHOD_NAME" value="sizeOfListOfInsistsEqualsToRegretUsesSubNumOfUsesOfInsist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -109,22 +117,6 @@
       <option name="PACKAGE_NAME" value="se.iths.svartkettil.laborationtre" />
       <option name="MAIN_CLASS_NAME" value="se.iths.svartkettil.laborationtre.PaintModelTest" />
       <option name="METHOD_NAME" value="test2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PaintModelTest.usingInsistMethodXTimesAfterUsingRegretXTimesResultsInAnEmptyListOfInsists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LaborationTre" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="se.iths.svartkettil.laborationtre.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="se.iths.svartkettil.laborationtre" />
-      <option name="MAIN_CLASS_NAME" value="se.iths.svartkettil.laborationtre.PaintModelTest" />
-      <option name="METHOD_NAME" value="usingInsistMethodXTimesAfterUsingRegretXTimesResultsInAnEmptyListOfInsists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PaintModelTest.modelReturnsShapeTypeSquareWhenSquareIsChosenShape" />
+        <item itemvalue="JUnit.PaintModelTest.sizeOfListOfInsistsEqualsToRegretUsesSubNumOfUsesOfInsist" />
+        <item itemvalue="JUnit.PaintModelTest.checkFunctionOfRegretAndInsist" />
         <item itemvalue="JUnit.PaintModelTest.usingInsistXTimesAfterUsingRegretXTimesResultsEmptyListOfInsists" />
         <item itemvalue="JUnit.PaintModelTest.test2" />
-        <item itemvalue="JUnit.PaintModelTest.usingInsistMethodXTimesAfterUsingRegretXTimesResultsInAnEmptyListOfInsists" />
-        <item itemvalue="JUnit.PaintModelTest.checkFunctionOfRegretAndInsist" />
-        <item itemvalue="JUnit.PaintModelTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +162,7 @@
       <workItem from="1666686207465" duration="8067000" />
       <workItem from="1666732644896" duration="14274000" />
       <workItem from="1666867676922" duration="38935000" />
+      <workItem from="1668154755548" duration="1820000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <created>1666875502860</created>
